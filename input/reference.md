@@ -1,0 +1,86 @@
+home: index.html
+prev: 5-tricks.html
+---
+
+# Reference index for various properties and concepts
+
+- anonymous box generation
+  - [anonymous box generation, CSS 2.1](1-positioning.html#anonymous-box-generation)
+  - [anonymous box generation, flexbox](4-flexbox.html#display-flex-and-anonymous-box-generation)
+- [positioning scheme](1-positioning.html#positioning-schemes)
+  - normal flow formatting context
+    - [block formatting context](1-positioning.html#normal-flow-block-formatting)
+      - [display: block](1-positioning.html#normal-flow-block-formatting)
+        - [height, for block-level boxes](2-box-model.html#-content-based-height-for-blocks-floats-and-inline-blocks)
+        - [width, for block-level boxes](2-box-model.html#width-calculations-block-level-elements-constraint-based-)
+        - [margin, for block-level boxes](2-box-model.html#width-calculations-block-level-elements-constraint-based-)
+    - [inline formatting context](/1-positioning.html#normal-flow-inline-formatting)
+      - [display: inline](/1-positioning.html#normal-flow-inline-formatting)
+        - [width, for inline-level boxes](2-box-model.html#box-model-calculations-for-inline-elements)
+        - [height, for inline-level boxes](2-box-model.html#box-model-calculations-for-inline-elements)
+        - [margin, for inline-level boxes](2-box-model.html#box-model-calculations-for-inline-elements)
+        - [line-height](1-positioning.html#vertical-alignment-within-line-boxes-vertical-align-)
+        - [text-align](1-positioning.html#horizontal-alignment-within-line-boxes-text-align-)
+        - [vertical-align](1-positioning.html#vertical-alignment-within-line-boxes-vertical-align-)
+        - [vertical-align: middle](1-positioning.html#vertical-align-middle-doesn-t-quite-do-what-you-d-expect)
+      - display: inline-block
+        - [height, for inline-block boxes](2-box-model.html#-content-based-height-for-blocks-floats-and-inline-blocks)
+        - [width, for inline-block boxes](2-box-model.html#width-calculations-floating-blocks-and-inline-block-elements-shrink-to-fit-)
+        - [margin, for inline-block boxes](2-box-model.html#margins-for-floating-blocks-and-inline-block-elements)
+  - [relative positioning](1-positioning.html#normal-flow-relative-positioning)
+    - [position: relative](1-positioning.html#normal-flow-relative-positioning)
+  - [float positioning](1-positioning.html#float-positioning-scheme)
+    - [float](1-positioning.html#float-positioning-scheme)
+      - [height, for floats](2-box-model.html#-content-based-height-for-blocks-floats-and-inline-blocks)
+      - [width, for floats](2-box-model.html#width-calculations-floating-blocks-and-inline-block-elements-shrink-to-fit-)
+      - [margin, for floats](2-box-model.html#margins-for-floating-blocks-and-inline-block-elements)
+      - [clear](1-positioning.html#float-clearing)
+      - [clearfix](1-positioning.html#the-clearfix)
+  - [absolute positioning](1-positioning.html#absolute-fixed-positioning-scheme)
+  - [fixed positioning](1-positioning.html#absolute-fixed-positioning-scheme)
+    - [position: absolute, position: fixed](1-positioning.html#absolute-fixed-positioning-scheme)
+      - [width, for absolutely positioned boxes](2-box-model.html#absolutely-positioned-non-replaced-elements)
+      - [height, for absolutely positioned boxes](2-box-model.html#absolutely-positioned-non-replaced-elements)
+      - [margin, for absolutely positioned boxes](2-box-model.html#absolutely-positioned-non-replaced-elements)
+- [box model](2-box-model.html)
+  - [padding](2-box-model.html#content-dimensions-and-margins)
+  - [border](2-box-model.html#content-dimensions-and-margins)
+  - [box-sizing](3-additional.html#-box-sizing-css3-)
+- miscellaneous
+  - margins
+    - [margin collapsing](3-additional.html#margin-collapsing)
+    - [negative margins](3-additional.html#negative-margins)
+  - [overflow](3-additional.html#overflow)
+  - [pseudo-elements](3-additional.html#pseudo-elements)
+    - [:before](3-additional.html#pseudo-elements)
+    - [:after](3-additional.html#pseudo-elements)
+  - `min-*`, `max-*`
+      - [min-width](3-additional.html#max-width-max-height-min-width-and-min-height)
+      - [max-width](3-additional.html#max-width-max-height-min-width-and-min-height)
+      - [min-height](3-additional.html#max-width-max-height-min-width-and-min-height)
+      - [max-height](3-additional.html#max-width-max-height-min-width-and-min-height)
+  - z-axis order
+    - [stacking context](3-additional.html#stacking-and-rendering-order)
+    - [rendering order](3-additional.html#rendering-order)
+    - [z-index](3-additional.html#stacking-contexts-and-z-index)
+- [flexbox](4-flexbox.html)
+  - [flexbox main axis](4-flexbox.html#flex-container-properties-main-and-cross-axis)
+  - [flexbox cross axis](4-flexbox.html#flex-container-properties-main-and-cross-axis)
+  - [flex lines](4-flexbox.html#flex-container-properties-flex-lines)
+  - [flex item sizing](4-flexbox.html#flex-items-flex-item-sizing)
+  - [dividing flex items across flex lines](4-flexbox.html#dividing-flex-items-onto-flex-lines)
+  - [alignment for flex lines and items](4-flexbox.html#flex-line-alignment-and-flex-item-alignment)
+    - [display: flex](4-flexbox.html#display-flex-and-anonymous-box-generation)
+    - [flex-direction](4-flexbox.html#flex-container-properties-main-and-cross-axis)
+    - [flex-wrap](4-flexbox.html#flex-container-properties-flex-lines)
+    - [flex-basis](4-flexbox.html#flex-basis)
+    - [flex-grow](4-flexbox.html#calculations-for-flex-grow-)
+    - [flex-shrink](4-flexbox.html#calculations-for-flex-shrink-)
+    - [justify-content](4-flexbox.html#main-axis-alignment-justify-content-)
+    - [align-content](4-flexbox.html#cross-axis-alignment-for-flex-lines-align-content-)
+    - [align-items](4-flexbox.html#cross-axis-alignment-for-flex-items-align-items-align-self-)
+    - [align-self](4-flexbox.html#cross-axis-alignment-for-flex-items-align-items-align-self-)
+    - [order](4-flexbox.html#the-order-property)
+
+
+
