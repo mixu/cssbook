@@ -16,12 +16,6 @@ module.exports = function(code, lang) {
       hasCSS  = css.trim().length > 0;
 
   result += '<div class="snippet-container">' +
-       '<ul class="snippet">' +
-          '<li>HTML</li>' +
-          (hasCSS ? '<li>CSS</li>' : '') +
-          (hasJS ? '<li>JS</li>' : '') +
-          '<li>Result</li>' +
-       '</ul>' +
        (hasCSS ? '<div class="css">' + hl(css, 'css') + '</div>' : '') +
        '<div class="html">' + hl(html, 'html') + '</div>' +
        (hasJS ? '<div class="js">' + hl(js, 'js') + '</div>' : '') +
