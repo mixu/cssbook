@@ -187,11 +187,19 @@ In addition to allowing you to set `width` and `height` explicitly, CSS 2.1 also
 
 These values can be specified either using explicit units like `px`, or as a percentage of the parent width or parent height:
 
-| `max-` / `min-` value | Description
+| `max-` / `min-width`  | Description
 |-------|----------------------------------------------------------------------
 | `<length>` | Specifies a fixed minimum or maximum used width.
-| `<percentage>` | Specifies a percentage for determining the used value. The percentage is calculated with respect to the width of the generated box's containing block. If the containing block's width is negative, the used value is zero. If the containing block's width depends on this element's width, then the resulting layout is undefined in CSS 2.1.
-| none | (Only on 'max-width') No limit on the width of the box.
+| `<percentage>` | Specifies a percentage for determining the used value. The percentage is calculated with respect to the width of the generated box's containing block. If the containing block's width is negative, the used value is zero. *If the containing block's width depends on this element's width*, then the resulting layout is undefined in CSS 2.1.
+| `none` | (Only on 'max-width') No limit on the width of the box.
+
+| `max-` / `min-height`  | Description
+|-------|----------------------------------------------------------------------
+| `<length>` | Specifies a fixed minimum or maximum used width.
+| `<percentage>` | Specifies a percentage for determining the used value. The percentage is calculated with respect to the height of the generated box's containing block. **If the height of the containing block is not specified explicitly** (i.e., it depends on content height), and this element is not absolutely positioned, the percentage value is treated as '0' (for 'min-height') or 'none' (for 'max-height').
+| `none` | (Only on 'max-height') No limit on the height of the box.
+
+It is worth noting the special case on `max-height` / `min-height`: percentage values for these properties are only applied when the height of the containing block is set to a definite value (!). A similar restriction applies to `max-width` / `min-width`.
 
 The properties are applied as follows:
 
