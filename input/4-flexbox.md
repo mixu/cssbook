@@ -572,7 +572,7 @@ To check the math, use your browser's developer tools to inspect the example bel
 }
 .two {
   flex-shrink: 2;
-  width: 200px;
+  width: 100px;
   border: none;
 }
 ---
