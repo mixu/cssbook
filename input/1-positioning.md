@@ -384,7 +384,7 @@ In the example above:
 There are a couple of solutions to this problem:
 
 - one way to fix this is to eliminate the whitespace between the two divs, e.g. `...</div><div>...`.
-- another way to solve this to set font-size to 0 in the parent layer, and the to set it to the value you want in the two child divs. This should cause the whitespace to not take up any space.
+- another way to solve this is to set font-size to 0 in the parent layer, and then to set it to the value you want in the two child divs. This should cause the whitespace to not take up any space.
 - Setting `white-space: nowrap` also helps - it doesn't get rid of the whitespace, but it does prevent line breaking due to whitespace. In this case, the two divs would be positioned on the same line box, but with a space in between, and the right div would overflow the parent container.
 - finally, the CSS3 [`text-space-collapse`](http://dev.w3.org/csswg/css-text-4/#white-space-collapsing) property, which is currently not implemented by most browsers will address this issue.
 
