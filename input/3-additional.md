@@ -8,7 +8,7 @@ Now that we have discussed how the box model properties vary across different el
 
 - *Margin collapsing* affects adjacent margins so that only the larger of two margins is applied.
 - *Negative margins*. Negative values (e.g. `-10px`) are allowed for margins, and these can be used to position content.
-- *Overflow*. When the content inside a container box is larger than it's parent or positioned at a offset that is beyond the parent's box, it overflows. The `overflow` property controls how this is handled.
+- *Overflow*. When the content inside a container box is larger than its parent or positioned at a offset that is beyond the parent's box, it overflows. The `overflow` property controls how this is handled.
 - *max-width, max-height, min-width, min-height*, Width and height can be further constrained by using the `max-width`, `max-height`, `min-width` and `min-height` properties.
 - *Pseudo-elements* allow additional elements to be generated within the selected element from CSS. They are often used to generate additional content for layout or for to provide a particular visual appearance.
 - *Stacking contexts and rendering order* determine the z-axis rendering of boxes.
@@ -59,7 +59,7 @@ If you think of the margins as boxes on their own, then you can see that two mar
 All of these cases are eligible for margin collapsing. Two margins will only collapse if they are not separated by:
 
 - content (e.g. text in line boxes)
-- padding or borders (e.g. if a parent has padding or borders, it's margins cannot collapse with the margins of it's children but otherwise they will)
+- padding or borders (e.g. if a parent has padding or borders, its margins cannot collapse with the margins of its children but otherwise they will)
 - clearance (e.g. the result of clearing a float may separate the margins enough that they cannot collapse.)
 
 What happens when margins collapse?
@@ -166,7 +166,7 @@ Negative margins shift the position where rendering happens, which can be used t
 
 ## Overflow
 
-Overflow occurs when a child element is either positioned outside its parent element, or the child element does not fit inside the dimensions of it's parent. The `overflow` property controls how the portion of the child that overflows is rendered:
+Overflow occurs when a child element is either positioned outside its parent element, or the child element does not fit inside the dimensions of its parent. The `overflow` property controls how the portion of the child that overflows is rendered:
 
 > This property specifies whether content of a block container element is clipped when it overflows the element's box. It affects the clipping of all of the element's content except any descendant elements (and their respective content and descendants) whose containing block is the viewport or an ancestor of the element. [source](http://www.w3.org/TR/2011/REC-CSS2-20110607/visufx.html#overflow)
 
@@ -254,7 +254,7 @@ As you can see:
 - if you scroll the first example, where `height: 100%` was set, you can see that the height of the div matches the parent's height and the content overflows the borders of the div.
 - in the second example, where `min-height: 100%` is used, the height of the div matches its contents.
 
-Why does this behavior occur? Because setting `min-height` leaves `height` to it's default value - `height: auto`. Then, the regular box model calculations are applied, which for a block-level element cause the box to be sized based on it's contents.
+Why does this behavior occur? Because setting `min-height` leaves `height` to its default value - `height: auto`. Then, the regular box model calculations are applied, which for a block-level element cause the box to be sized based on its contents.
 
 In contrast, setting `height: 100%` does not trigger any content-based sizing: it just sets the height of the box directly as if it was set using some other unit, such as `px` - which causes overflow in this case.
 

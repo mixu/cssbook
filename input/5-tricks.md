@@ -53,7 +53,7 @@ Setting `position: relative` does not affect the positioning of elements in norm
 
 *Negative margins*. Margins in CSS can be negative; typically this feature is not very useful because it is hard to use correctly when the elements in question have a size that is not fixed. However, it can be useful for doing things that would otherwise be difficult. For example, if you actually want an element to overflow - such as the image carousel navigation buttons - setting a fixed negative margin can be used to intentionally cause overflow. Another prominent use case is for centering in old versions of IE, as you will see later in this chapter.
 
-*Transforms*. CSS 3 introduces a `transform: translate()` method which allows elements to be positioned using units that are relative to their own width and height. This can be a viable alternative to using negative margins. While I haven't discussed it here, it worth learning a bit about `transform: translate()`: specifically, it allows for translations to be expressed *as a percentage of the current box* - rather than as a percentage of the parent box as is typical in CSS. For example, `transform: translateX(-50%)` will move the current box to the left by half of it's width - something that would be impossible to do with negative margins for boxes that do not have a fixed, predetermined width.
+*Transforms*. CSS 3 introduces a `transform: translate()` method which allows elements to be positioned using units that are relative to their own width and height. This can be a viable alternative to using negative margins. While I haven't discussed it here, it worth learning a bit about `transform: translate()`: specifically, it allows for translations to be expressed *as a percentage of the current box* - rather than as a percentage of the parent box as is typical in CSS. For example, `transform: translateX(-50%)` will move the current box to the left by half of its width - something that would be impossible to do with negative margins for boxes that do not have a fixed, predetermined width.
 
 *margin: auto*. Knowing the two cases where setting `margin: auto` works is useful, since this allows you to make use of the builtin layouting algorithms for centering. Do you remember what the two cases are where `margin: auto` causes centering and what their prerequisites are?
 
@@ -144,7 +144,7 @@ A new formatting context:
 
 - contains floats: floats only interact with elements in the same formatting context
 - interacts with floats as a unit: that is, a block that establishes a formatting context is placed either adjacent to floating boxes, or cleared below them if it does not fit; the floats outside the formatting context cannot affect the content of the box that establishes a new formatting context
-- prevents margins from collapsing between the box establishing a formatting context and it's parent
+- prevents margins from collapsing between the box establishing a formatting context and its parent
 ```
 
 Can you describe one method for establishing a new formatting context? If not, review [this page on formatting context in MDN](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context), and consider taking another look at [chapter 1](1-positioning.html).
