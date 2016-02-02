@@ -483,7 +483,7 @@ The spec is a bit vague on what forms a stacking context, but the [MDN docs](htt
 - elements with a mix-blend-mode value other than "normal",
 - elements with isolation set to "isolate",
 - on mobile WebKit and Chrome 22+, position: fixed always creates a new stacking context, even when z-index is "auto" (See this post)
-- specifying any attribute above in will-change even you don't write themselves directly (See this post)
+- specifying any attribute above in will-change even if you don't specify values for these attributes directly (See this post)
 - elements with -webkit-overflow-scrolling set to "touch"
 
 In other words, stacking contexts are more rare than formatting contexts, since most elements do not form new stacking contexts.
