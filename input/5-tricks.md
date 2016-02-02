@@ -127,7 +127,7 @@ For example, in a 12-column layout, a 1-column float will have `1/12` of the ava
 *Clearfix*. Do you remember what a clearfix is, and why the clearfix technique is necessary?
 
 ```spoiler
-The clearfix is a small piece of CSS that is used by many developers who work with floats. Over the years, there have been several different versions of the clearfix - the modern versions are less terrible since they contain fewer old-IE -specific fixes.
+The clearfix is a small piece of CSS that is used by many developers who work with floats. Over the years, there have been several different versions of the clearfix - the modern versions are less terrible since they contain fewer old, IE-specific fixes.
 
 A clearfix combines several desirable properties into one class:
 
@@ -281,7 +281,7 @@ In this section, I'll discuss a couple of techniques that allow you to achieve b
 - `position: absolute` negative margin based centering (all browsers)
 - flexbox centering (IE10+)
 
-These cover the gamut of techniques that work on all browsers; even on IE.shshaw's [codepen resource on centering](http://codepen.io/shshaw/full/gEiDt) covers several additional techniques.
+These cover the gamut of techniques that work on all browsers--even on IE.shshaw's [codepen resource on centering](http://codepen.io/shshaw/full/gEiDt) covers several additional techniques.
 
 *position: absolute constraint based centering*: First, a technique that works on all modern browsers (IE8+), and one that is probably a reasonable default approach unless you need to support ancient IE.
 
@@ -374,7 +374,7 @@ You need to specify both the width and the height in order to center both vertic
 Adjusting the negative margins manually can be painful. However, this is the only `position: absolute` based technique that works in IE6.
 ```
 
-*flexbox based centering*: Flexbox based centering is the least surpising way to center items: the properties work as described.
+*flexbox based centering*: Flexbox based centering is the least surpising way to center items; the properties work as described.
 
 ```snippet
 <div class="flexbox-center blue">

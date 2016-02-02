@@ -697,7 +697,7 @@ The reason behind this is that there are actually two variants of "content-based
 
 ## The clearfix
 
-The clearfix technique is an enhancement over basic float clearing. The clearfix is a small piece of CSS that is used by many developers who work with floats. Over the years, there have been several different versions of the clearfix - the modern versions are less terrible since they contain fewer old-IE -specific fixes.
+The clearfix technique is an enhancement over basic float clearing. The clearfix is a small piece of CSS that is used by many developers who work with floats. Over the years, there have been several different versions of the clearfix - the modern versions are less terrible since they contain fewer old, IE-specific fixes.
 
 A clearfix combines several desirable properties into one class:
 
