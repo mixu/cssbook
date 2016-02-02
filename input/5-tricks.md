@@ -97,7 +97,7 @@ For example, let's say you want to position a box in on the left or right side o
 ---
 ```
 
-On the horizontal axis, `top: 0`, `bottom: 0`, `margin-top: auto`, `margin-bottom: auto` combine to trigger centering (as described in the box model chapter). On the vertical axis, for the `.previous` div, `left: 0`, `right: auto`, `margin-right: auto` and `margin-right: -15px` (or `auto`) cause the box to be positioned at the left edge of the parent. The `-15px` negative margin (half the width) places the box neatly on top of the box. The same rules apply to the `.next` div (using `right: 0` instead).
+On the vertical axis, `top: 0`, `bottom: 0`, `margin-top: auto`, `margin-bottom: auto` combine to trigger centering (as described in the box model chapter). On the horizontal axis, for the `.previous` div, `left: 0`, `right: auto`, `margin-right: auto` and `margin-left: -15px` (or `auto`) cause the box to be positioned at the left edge of the parent. The `-15px` negative margin (half the width) places the box neatly on top of the box. The same rules apply to the `.next` div (using `right: 0` instead).
 
 ## Float-based grids: how CSS grid frameworks work
 
