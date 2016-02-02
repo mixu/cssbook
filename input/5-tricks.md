@@ -31,7 +31,7 @@ CSS3 adds the new `vh` and `vw` units, which are always relative to viewport hei
 
 *Combining flex-grow: 0 and flex-grow: 1*. Flexbox provides a powerful toolkit for controlling how elements are sized. Philip Walton's [Solved by Flexbox](http://philipwalton.github.io/solved-by-flexbox/) covers several additional layouts, but one particular technique I'd like to highlight is using a combination of `flex-grow: 0` and `flex-grow: 1` to produce a bottom or top aligned box, such as a footer or a header. The trick is simple: place the main content inside a `flex-grow: 1` flex item, and place the footer or header in a `flex-grow: 0` flex item. Assuming the flex parent is sized as a percentage of its parent, the main content container will take up all the space that is left over, pushing the footer to the bottom or leaving the header at the top.
 
-*Sizing with contraints*. You can make use of the fact that you can fill in a missing value through the constraint-based sizing algorithm for `position: absolute` elements; this also works for `display: block` but only for width.
+*Sizing with constraints*. You can make use of the fact that you can fill in a missing value through the constraint-based sizing algorithm for `position: absolute` elements; this also works for `display: block` but only for width.
 
 If you leave the `width` (and/or `height` for absolutely positioned elements) property to `auto`, but set the values for `margin` explicitly, then the absolutely positioned block will be sized such that it takes up all of the available space except for the space left over for margins.
 
@@ -62,7 +62,7 @@ Setting `position: relative` does not affect the positioning of elements in norm
 - `margin: auto` on a `position: absolute` box will center it horizontally and vertically. You need to set both `width` and `height` as well as set all the offsets (`top`, `left`, `bottom`, `right`) to `0` for this to work.
 ```
 
-*Positioning with constraints*. There are many interesting things that you can do with `position: absolute` elements as well as the `width` of `display: block` elements. For absolutely positioned elements, it is possible to trigger a contraint-based size calculation in both the horizontal and vertical axes; for `display: block` elements this only works for horizontal sizing.
+*Positioning with constraints*. There are many interesting things that you can do with `position: absolute` elements as well as the `width` of `display: block` elements. For absolutely positioned elements, it is possible to trigger a constraint-based size calculation in both the horizontal and vertical axes; for `display: block` elements this only works for horizontal sizing.
 
 For example, let's say you want to position a box in on the left or right side of a parent box while keeping it centered vertically. This could, for example, be the left and right navigation buttons on a image carousel. To accomplish this, you could set the parent to `position: relative`, and then use something like this:
 
@@ -116,7 +116,7 @@ Next, grid frameworks use four techniques to achieve their behavior:
 
 *Floats* The columns themselves are simply `float: left` divs. Floats can be used to position boxes to the left and right edges of their container box. For grid frameworks, they are useful since floats are always stacked on the left side and can be set to have to occupy a particular percentage of the parent width.
 
-*Percentage-based width*. The grid columns have a `width` value defined as a percentage of the parent box. The framework ensures that the widths add up to `100%`, taking into account issues that can arise with rounding. This means that the columns will always fit onto a single row of in the grid framework and take up some divisor of the total width.
+*Percentage-based width*. The grid columns have a `width` value defined as a percentage of the parent box. The framework ensures that the widths add up to `100%`, taking into account issues that can arise with rounding. This means that the columns will always fit onto a single row in the grid framework and take up some divisor of the total width.
 
 For example, in a 12-column layout, a 1-column float will have `1/12` of the available width (as a percentage) assigned to it. Placing a 4-column float with a 8-column float allows for a 33%:66% split of the available space.
 
@@ -187,7 +187,7 @@ Of course, I would recommend using a more battle-tested grid framework, but this
 
 ## Techniques for horizontal and vertical centering in CSS
 
-Horizontal and vertical centering in CSS is somewhat complicated. There are many different techniques which have different requirements and tradeoffs. Take a look at shshaw's [codepen resource on centering](http://codepen.io/shshaw/full/gEiDt) for additional examples (although his explanation of why his preferred technique works is overly complicated, since `position: absolute` boxes are simply [sized in one step using the constraint-based algorithm](2-box-model.html#absolutely-positioned-non-replaced-elements) depending on on whether offsets, dimensions and margins are defined; there is no five step process here).
+Horizontal and vertical centering in CSS is somewhat complicated. There are many different techniques which have different requirements and tradeoffs. Take a look at shshaw's [codepen resource on centering](http://codepen.io/shshaw/full/gEiDt) for additional examples (although his explanation of why his preferred technique works is overly complicated, since `position: absolute` boxes are simply [sized in one step using the constraint-based algorithm](2-box-model.html#absolutely-positioned-non-replaced-elements) depending on whether offsets, dimensions and margins are defined; there is no five step process here).
 
 In this section, I will demonstrate techniques for horizontal and vertical centering and ask you to think about how they work and what their benefits and disadvantages are.
 
@@ -281,7 +281,7 @@ In this section, I'll discuss a couple of techniques that allow you to achieve b
 - `position: absolute` negative margin based centering (all browsers)
 - flexbox centering (IE10+)
 
-These cover the gamut of techniques that work on all browsers; even on IE.shshaw's [codepen resource on centering](http://codepen.io/shshaw/full/gEiDt) covers several additional techniques.
+These cover the gamut of techniques that work on all browsers; even on IE. shshaw's [codepen resource on centering](http://codepen.io/shshaw/full/gEiDt) covers several additional techniques.
 
 *position: absolute constraint based centering*: First, a technique that works on all modern browsers (IE8+), and one that is probably a reasonable default approach unless you need to support ancient IE.
 
@@ -374,7 +374,7 @@ You need to specify both the width and the height in order to center both vertic
 Adjusting the negative margins manually can be painful. However, this is the only `position: absolute` based technique that works in IE6.
 ```
 
-*flexbox based centering*: Flexbox based centering is the least surpising way to center items: the properties work as described.
+*flexbox based centering*: Flexbox based centering is the least surprising way to center items: the properties work as described.
 
 ```snippet
 <div class="flexbox-center blue">
@@ -455,7 +455,7 @@ Thank you for reading this far!
 
 If you liked the book, follow me on [Github](https://github.com/mixu/) (or [Twitter](http://twitter.com/mikitotakada)). I love seeing that I've had some kind of positive impact. And if you end up writing about CSS in a blog post or elsewhere, feel free to link back - every link helps :).
 
-If you notice that a layout-related technique that you would like to see covered is missing from the book, feel free to [file an issue on Github](https://github.com/mixu/cssbook/issues). It may take me a while to get back to writing a second edition, but in the meanwhile having someone mention additional techniques in the form of an issue can be helpful for other readers of the book and I will make use the issues to improve the book further the next time I am working on it.
+If you notice that a layout-related technique that you would like to see covered is missing from the book, feel free to [file an issue on Github](https://github.com/mixu/cssbook/issues). It may take me a while to get back to writing a second edition, but in the meanwhile having someone mention additional techniques in the form of an issue can be helpful for other readers of the book and I will use the issues to improve the book further the next time I am working on it.
 
 Similarly, if you have experienced an edge case, bug or interaction between different CSS properties that you feel is worth knowing about, feel free to [file an issue on Github](https://github.com/mixu/cssbook/issues). Many of the examples in the book come from my own work and having additional real-world issues listed will help other readers and will let me find more interesting topics to cover in a future edition. There are many practical pitfalls with CSS, and while I can teach you how the spec says things should work, there is no central repository for the problems that real browsers - sometimes even working as the spec intended - can cause in the real world.
 

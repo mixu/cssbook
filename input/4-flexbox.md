@@ -544,7 +544,7 @@ Now, let's follow the algorithm:
 - Calculate the scaled flex shrink factor, which is the flex base size multiplied by the flex shrink factor:
   - Item #1: `1 * 100px = 100px`
   - Item #2: `2 * 100px = 200px`
-- Calculate the ratio of the scaled shrink facto to the sum of scaled shrink factors:
+- Calculate the ratio of the scaled shrink factor to the sum of scaled shrink factors:
   - Item #1: `100 / 300 = 1/3`
   - Item #2: `200 / 300 = 2/3`
 - Set the item’s target main size to its flex base size minus a fraction of the absolute value of the remaining free space proportional to the ratio.
