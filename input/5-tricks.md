@@ -64,7 +64,7 @@ Setting `position: relative` does not affect the positioning of elements in norm
 
 *Positioning with constraints*. There are many interesting things that you can do with `position: absolute` elements as well as the `width` of `display: block` elements. For absolutely positioned elements, it is possible to trigger a contraint-based size calculation in both the horizontal and vertical axes; for `display: block` elements this only works for horizontal sizing.
 
-For example, let's say you want to position a box in on the left or right side of a parent box while keeping it centered vertically. This could, for example, be the left and right navigation buttons on a image carousel. To accomplish this, you could set the parent to `position: relative`, and then use something like this:
+For example, let's say you want to position a box in on the left or right side of a parent box while keeping it centered vertically. This could, for example, be the left and right navigation buttons on an image carousel. To accomplish this, you could set the parent to `position: relative`, and then use something like this:
 
 ```snippet
 <div class="parent blue">
@@ -118,7 +118,7 @@ Next, grid frameworks use four techniques to achieve their behavior:
 
 *Percentage-based width*. The grid columns have a `width` value defined as a percentage of the parent box. The framework ensures that the widths add up to `100%`, taking into account issues that can arise with rounding. This means that the columns will always fit onto a single row of in the grid framework and take up some divisor of the total width.
 
-For example, in a 12-column layout, a 1-column float will have `1/12` of the available width (as a percentage) assigned to it. Placing a 4-column float with a 8-column float allows for a 33%:66% split of the available space.
+For example, in a 12-column layout, a 1-column float will have `1/12` of the available width (as a percentage) assigned to it. Placing a 4-column float with an 8-column float allows for a 33%:66% split of the available space.
 
 *Relative positioning*. The grid columns typically have `position: relative` as a default to make them act as the reference point for any absolutely positioned content.
 
@@ -268,7 +268,7 @@ Here are two ways to make the example above work:
 
 For solution 1, you cannot set `line-height` to `100%`, because line height is relative to parent font height, not parent container height.
 
-For solution 2, you need to use a inline-block because normal inline-level boxes do not have a `height` property and hence cannot reference the parent height. A pseudo-element is preferable to a real element because it requires fewer changes in markup.
+For solution 2, you need to use an inline-block because normal inline-level boxes do not have a `height` property and hence cannot reference the parent height. A pseudo-element is preferable to a real element because it requires fewer changes in markup.
 ```
 
 ## Horizontal and vertical centering

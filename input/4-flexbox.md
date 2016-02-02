@@ -64,7 +64,7 @@ However, absolutely positioned children are excluded.
 
 > An absolutely-positioned child of a flex container does not participate in flex layout. However, it does participate in the reordering step (see order), which has an effect in their painting order. [source](http://www.w3.org/TR/css3-flexbox/#abspos-items)
 
-What does it mean for a in-flow child to become a flex item?
+What does it mean for an in-flow child to become a flex item?
 
 > The `display` value of a flex item is blockified: if the specified display of an in-flow child of an element generating a flex container is an inline-level value, it computes to its block-level equivalent.
 >
@@ -109,7 +109,7 @@ The `row` and `column` directions do what you would expect. You can also reverse
 
 ## Flex container properties: flex lines
 
-Like a inline block formatting context, a flexbox container's contents can be laid out on multiple lines.
+Like an inline block formatting context, a flexbox container's contents can be laid out on multiple lines.
 
 > Flex items in a flex container are laid out and aligned within *flex lines*, hypothetical containers used for grouping and alignment by the layout algorithm.
 
