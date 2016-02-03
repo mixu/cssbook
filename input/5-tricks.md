@@ -444,7 +444,7 @@ Can you figure out a way to solve this, based on what you know about stacking co
 ```spoiler
 Force the divs to create new stacking contexts.
 
-`z-index` values only affect relative stacking order within a single stacking context. If the spans are in different stacking contexts, and the z-index order is not specified, the divs (and spans within their stacking contexts) are rendered in markup order from back to front, so that red is behind green and green is behind blue.
+`z-index` values only affect relative stacking order within a single stacking context. If the divs are in different stacking contexts, and the z-index order is not specified, the divs are rendered in markup order from back to front, so that red is behind green and green is behind blue.
 
 You can do this by adding one of several properties that trigger a new stacking context, such as `div { opacity: 0.99; }` or `div {transform: translateX(0); }`.
 ```
