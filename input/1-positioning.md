@@ -101,7 +101,7 @@ Anonymous inline boxes are generated when a block container element contains tex
 <p>Some <em>emphasized</em> text</p>
 ```
 
-would result in two anonymous inline boxes: one for "Some " and one for " text".
+would result in two anonymous inline boxes: one for "Some&nbsp;" and one for "&nbsp;text".
 
 Anonymous box generation is important, because it determines what the formatting context is for elements in normal flow that have both block- and inline-level siblings. Many real-world HTML layouts will have both block- and inline-level content in a single parent element. Anonymous box generation ensures that if any block-level content is mixed in with inline-level siblings, then the inline-level boxes are wrapped in anonymous block-level containers for purposes of layout, which means that they are laid out relative to other boxes as if they were block-level boxes.
 
