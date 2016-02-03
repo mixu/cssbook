@@ -89,7 +89,7 @@ The spec actually has two "content-based" height calculations:
 - one for floats, inline-block elements and block-level elements in normal flow when `overflow` does not compute to `visible` ([relevant section](http://www.w3.org/TR/CSS2/visudet.html#block-root-margin))
 - another one for block-level elements in normal flow when `overflow` does compute to `visible` ([relevant section](http://www.w3.org/TR/CSS2/visudet.html#normal-block))
 
-Both of those calculations attempt to set the `height` of the element to account for the contents, but the algorithm used for block-level elements when `overflow: visible` is ignores floating descendants. This is the reason why, by default, a block-level box with only floating descendants has a height of 0 since `visible` is the default value for `overflow`.
+Both of those calculations attempt to set the `height` of the element to account for the contents, but the algorithm used for block-level elements when `overflow: visible` ignores floating descendants. This is the reason why, by default, a block-level box with only floating descendants has a height of 0 since `visible` is the default value for `overflow`.
 
 For floats, inline-block elements and block-level elements in normal flow where overflow is some value other than `visible`, floating descendants are also taken into account. Specifically, for those elements:
 

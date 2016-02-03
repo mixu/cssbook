@@ -119,7 +119,7 @@ The spec provides a very nice description of how layout works in a block formatt
 
 > In a block formatting context, each box's left outer edge touches the left edge of the containing block (for right-to-left formatting, right edges touch). This is true even in the presence of floats (although a box's line boxes may shrink due to the floats), unless the box establishes a new block formatting context (in which case the box itself may become narrower due to the floats). [source](http://www.w3.org/TR/CSS2/visuren.html#block-formatting)
 
-The two most important takeaways are that in a box formatting context, boxes are laid out vertically, and that every boxes left outer edge will touch the left outer edge of the containing block (even in the presence of floats).
+The two most important takeaways are that in a box formatting context, boxes are laid out vertically, and that every box's left outer edge will touch the left outer edge of the containing block (even in the presence of floats).
 
 The code example below illustrates some of these rules:
 
@@ -243,7 +243,7 @@ What happens if more than one font is used within a single inline box?
 
 The spec does not define the value, but the recommendation is that it is large enough for all fonts used (e.g. the maximum among the font heights).
 
-The alignment of the inline boxes is determined by the `vertical-align` property. There are two sets of values, the first set being relative to parent's font baseline, content area, or font-defined positions such as sub and super.
+The alignment of the inline boxes is determined by the `vertical-align` property. There are two sets of values, the first set being relative to the parent's font baseline, content area, or font-defined positions such as sub and super.
 
 | `vertical-align` value | Description
 |-------|----------------------------------------------------------------------
