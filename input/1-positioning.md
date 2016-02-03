@@ -42,7 +42,7 @@ Here's what the CSS 2.1 spec says about formatting context:
 
 > Boxes in the normal flow belong to a formatting context, which may be block or inline, but not both simultaneously. Block-level boxes participate in a block formatting context. Inline-level boxes participate in an inline formatting context. [Source](http://www.w3.org/TR/CSS2/visuren.html#normal-flow)
 
-The parent (container) establishes the formatting context for it's children based on whether the child boxes are considered to be inline-level or block-level. The terms inline-level and block-level are defined to highlight that blocks with a `display` property other than `inline` or `block` will still map to one of the two formatting contexts within normal flow. For example, `display: table` elements are considered to be block-level and `display: inline-table` elements are considered to be inline-level.
+The parent (container) establishes the formatting context for its children based on whether the child boxes are considered to be inline-level or block-level. The terms inline-level and block-level are defined to highlight that blocks with a `display` property other than `inline` or `block` will still map to one of the two formatting contexts within normal flow. For example, `display: table` elements are considered to be block-level and `display: inline-table` elements are considered to be inline-level.
 
 A block-level element is defined as:
 
@@ -311,7 +311,7 @@ In the example above:
 - even though the first parent element does not contain any text by itself, the baseline and the minimal line height of the line boxes inside that parent element is defined by the font size set on the parent element.
 - The first child element's baseline is aligned with the parent's baseline. The parent's baseline is based on the font size set on the parent element even though the parent contains no text that uses that font size. This is the "strut" mechanism in action, where the parent baseline is defined by an invisible, zero-width inline box with the element's font and line height properties.
 - Next, a series of `vertical-align: super` inline elements gradually shift the baseline, which could increase the line height further (in this case it does not because the parent font is so large). This illustrates how alignment can increase line box height.
-- Finally, the span with "super-parent" is on the same level as the first "child" element, so it's baseline is shifted according to the parent's font size's `super` position, which appears much higher than the other two super -aligned inline elements because the parent font size larger than the child font size.
+- Finally, the span with "super-parent" is on the same level as the first "child" element, so its baseline is shifted according to the parent's font size's `super` position, which appears much higher than the other two super -aligned inline elements because the parent font size larger than the child font size.
 
 Note that many of the `vertical-align` values are relative to the parent element's baseline - which is determined by the font metrics and font size of the parent element. For example, the chain of `vertical-align: super` elements gradually shifts the baseline upwards.
 
@@ -355,7 +355,7 @@ I've added a couple of additional styles to better show the different parts that
 - the inner blocks inside the container are `display: inline-block`, meaning they are treated as inline-level boxes and produce a inline formatting context, but their contents behave like `display: block` elements (for example, setting `width: 100%` works!).
 - the container has `text-align: center` to cause the inline-level blocks to be centered on each line box.
 - the content block has `vertical-align: middle` set on it, which aligns it vertically relative to all the other content on the line box.
-- a pseudo-element with `height: 100%` is added to the end of the container. It is shown in green. This is necessary because without it, the content block would simply be positioned at the top of the flow, because it would exist on it's own on a single line box, and the line box height would simply match the content block, which would mean that there would be nothing to align it with.
+- a pseudo-element with `height: 100%` is added to the end of the container. It is shown in green. This is necessary because without it, the content block would simply be positioned at the top of the flow, because it would exist on its own on a single line box, and the line box height would simply match the content block, which would mean that there would be nothing to align it with.
 - the `margin-left: -0.25em` is simply a heuristic to offset the spacing caused by the pseudo element.
 
 In short, the reason why this centering technique works is because we have forced the line height of the container to be 100% percent of the parent height, and then have asked for the centered item to be positioned at the midpoint of the sibling (green) element. Assuming that the box to be centered is less wide than the container, all of this will be placed on a single, very tall line box and the end result is vertical and horizontal centering.
@@ -429,7 +429,7 @@ Now, when the spec says "parent box", what does that mean? It turns out that the
 ---
 ```
 
-As you can see above, the child is aligned with the line boxes `x-height`, not the `parent` element's height. Since the line only contains the span plus generated anonymous inline-level boxes for the whitespace, it's height matches the line-height of the font, and nothing happens. In fact, since we are talking about `x-height` rather than height, the height of the line box doesn't even matter. The next example illustrates:
+As you can see above, the child is aligned with the line boxes `x-height`, not the `parent` element's height. Since the line only contains the span plus generated anonymous inline-level boxes for the whitespace, its height matches the line-height of the font, and nothing happens. In fact, since we are talking about `x-height` rather than height, the height of the line box doesn't even matter. The next example illustrates:
 
 ```snippet
 <div class="parent blue">
@@ -502,8 +502,8 @@ In other words, relatively positioned elements are positioned as normal, then of
 
 As you can see in the example:
 
-- the `.bar` box is offset 20 pixels up from it's normal flow position because it has `top: -20px`
-- the subsequent `.baz` box is still positioned as if the `.bar` box was in it's original position in the normal flow
+- the `.bar` box is offset 20 pixels up from its normal flow position because it has `top: -20px`
+- the subsequent `.baz` box is still positioned as if the `.bar` box was in its original position in the normal flow
 
 ## Float positioning scheme
 
@@ -620,7 +620,7 @@ The following example illustrates this behavior:
 
 In the example above:
 
-- The `new-context` div establishes a new formatting context (e.g. because it's `overflow` is not `visible`).
+- The `new-context` div establishes a new formatting context (e.g. because its `overflow` is not `visible`).
 - The float that precedes that div does not affect the line boxes of `new-context`. As you can see, the border of `new-context` is next to the border of the float, and the `new-context` box is placed next to the float.
 - The float does affect the line boxes of the following div, because it does not establish a new block formatting context. The left border of the div containing "after" is drawn underneath the float.
 

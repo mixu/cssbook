@@ -378,7 +378,7 @@ Now that we've looked at how flex items are placed on flex lines, let's look at 
 
 Two values - `flex-grow` and `flex-shrink` - control how flex items are resized. Both of these values accept a single unitless non-negative number. Setting either value to `0` disables either growing the flex items to the size of their flex line, or shrinking them in case the flex items overflow the flex container.
 
-`flex-grow` defaults to `0` and `flex-shrink` defaults to `1`. The `flex-grow` factor is applied when the flex lines's main axis dimension is greater than it's flex items total main axis dimension; the `flex-shrink` factor is applied when the flex line's main axis dimension is less than the total of the flex items total main axis dimension.
+`flex-grow` defaults to `0` and `flex-shrink` defaults to `1`. The `flex-grow` factor is applied when the flex lines's main axis dimension is greater than its flex items total main axis dimension; the `flex-shrink` factor is applied when the flex line's main axis dimension is less than the total of the flex items total main axis dimension.
 
 Most tutorials on flexbox say something like:
 
@@ -650,7 +650,7 @@ Note `align-content` does not affect the alignment of a single-line flex contain
 
 > In a single-line flex container, the cross size of the line is the cross size of the flex container, and align-content has no effect. The main size of a line is always the same as the main size of the flex container’s content box. [source](http://www.w3.org/TR/2015/WD-css-flexbox-1-20150514/#flex-lines)
 
-For multi-line flex containers, there are two heights (or cross-axis sizes) to think about: the cross-axis size of the flex container, and the cross-axis heights of each of the flex lines. `align-content` distributes the difference between these two sums. The height of each flex line is determined by it's content:
+For multi-line flex containers, there are two heights (or cross-axis sizes) to think about: the cross-axis size of the flex container, and the cross-axis heights of each of the flex lines. `align-content` distributes the difference between these two sums. The height of each flex line is determined by its content:
 
 > In a multi-line flex container (even one with only a single line), the cross size of each line is the minimum size necessary to contain the flex items on the line (after aligment due to align-self), and the lines are aligned within the flex container with the align-content property. [source](http://www.w3.org/TR/2015/WD-css-flexbox-1-20150514/#flex-lines)
 
