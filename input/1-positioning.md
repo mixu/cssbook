@@ -521,7 +521,7 @@ Floats exhibit several special behaviors:
 
 - Floats are taken out of the normal flow during layout, and hence they do not affect the vertical positioning of block-level elements.
 - Floats are aligned to either the left or right outer edge of their container.
-- Floats are stacked starting from either the left or right edge, and are stacked in the order they appear in markup. In other words, for right-floated boxes, the first right-floated box is positioned on the right edge of the box that contains it and the second right-floated box is positioned to right side of the first box. [source](http://www.w3.org/TR/CSS2/visuren.html#float-rules)
+- Floats are stacked starting from either the left or right edge, and are stacked in the order they appear in markup. In other words, for right-floated boxes, the first right-floated box is positioned on the right edge of the box that contains it and the second right-floated box is positioned immediately left of the first box. [source](http://www.w3.org/TR/CSS2/visuren.html#float-rules)
 - Floats can, however, affect the current and subsequent elements inline-level content's line boxes. Specifically, any current and subsequent line boxes are shortened to make space for the float.
 - Because floats are not in the normal flow, they do not normally affect parent height. This is one reason why the "clearfix" technique was developed.
 - Floats can be cleared using the `clear` property.
