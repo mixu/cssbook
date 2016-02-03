@@ -15,7 +15,7 @@ Taking a look at the commit history, I think I spent about five months on this p
 The content of the book is in `./input/`. To generate the book:
 
     npm install
-    make build
+    make book
 
 which generates the output in `./output/`.
 
