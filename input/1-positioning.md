@@ -31,7 +31,7 @@ Both floats and absolute positioning can be best understood through how they int
 
 If you think about it, there are actually two aspects of layout that are at play:
 
-- how the box of a element is sized and aligned, which is primarily controlled by the `display` property (and `width`, `height` and `margin`).
+- how the box of an element is sized and aligned, which is primarily controlled by the `display` property (and `width`, `height` and `margin`).
 - how elements within a particular parent element are positioned relative to each other
 
 In this chapter, I'll focus on the latter aspect - relative positioning. The next chapter covers the box model, which determines alignment and sizing.
@@ -54,13 +54,13 @@ Almost all block-level boxes are also block container boxes. A block container b
 
 > Except for table boxes [...] and replaced elements, a block-level box is also a block container box. A block container box either contains only block-level boxes or establishes an inline formatting context and thus contains only inline-level boxes. [Source](http://www.w3.org/TR/CSS2/visuren.html#block-level)
 
-And a inline-level element is defined as:
+And an inline-level element is defined as:
 
 > Inline-level elements are those elements of the source document that do not form new blocks of content; the content is distributed in lines (e.g., emphasized pieces of text within a paragraph, inline images, etc.). The following values of the 'display' property make an element inline-level: 'inline', 'inline-table', and 'inline-block'. Inline-level elements generate inline-level boxes, which are boxes that participate in an inline formatting context.
 
 > An inline box is one that is both inline-level and whose contents participate in its containing inline formatting context. A non-replaced element with a 'display' value of 'inline' generates an inline box. Inline-level boxes that are not inline boxes (such as replaced inline-level elements, inline-block elements, and inline-table elements) are called atomic inline-level boxes because they participate in their inline formatting context as a single opaque box. [Source](http://www.w3.org/TR/CSS2/visuren.html#inline-level)
 
-I won't really talk about replaced vs non-replaced elements, since it is a fairly minor distinction. The easiest way to think about replaced elements is to think about a `img` or `video` element - that is, an element that simply has a single (externally defined) content that cannot be broken up into lines like text content can.
+I won't really talk about replaced vs non-replaced elements, since it is a fairly minor distinction. The easiest way to think about replaced elements is to think about an `img` or `video` element - that is, an element that simply has a single (externally defined) content that cannot be broken up into lines like text content can.
 
 You can roughly think of the two formatting contexts in normal flow to correspond to vertical stacking (when in a block formatting context) and horizontal stacking (when in an inline formatting context). I'll cover both in a moment.
 
@@ -68,7 +68,7 @@ The interesting thing about the definitions above is that the formatting context
 
 ## Anonymous box generation
 
-Anonymous box generation is used to deal with cases where a parent element contains a mixture of inline-level and block-level child elements (in which case "anonymous block boxes" are generated) and with cases where the markup contains inline-level elements mixed with surrounding text (in which case "anonymous inline boxes" are generated), such as a `em` or `i` tag inside a paragraph of text.
+Anonymous box generation is used to deal with cases where a parent element contains a mixture of inline-level and block-level child elements (in which case "anonymous block boxes" are generated) and with cases where the markup contains inline-level elements mixed with surrounding text (in which case "anonymous inline boxes" are generated), such as an `em` or `i` tag inside a paragraph of text.
 
 ### Anonymous block boxes
 
@@ -95,7 +95,7 @@ In short, when inline-level and block-level boxes are mixed in a single parent e
 
 ### Anonymous inline boxes
 
-Anonymous inline boxes are generated when a block container element contains text that is not enclosed within a inline-level element. For example, the markup:
+Anonymous inline boxes are generated when a block container element contains text that is not enclosed within an inline-level element. For example, the markup:
 
 ```html
 <p>Some <em>emphasized</em> text</p>
@@ -172,7 +172,7 @@ In short, within an inline formatting context boxes are laid out horizontally on
 >
 > In general, the left edge of a line box touches the left edge of its containing block and the right edge touches the right edge of its containing block. [Line boxes] may vary in width if available horizontal space is reduced due to floats. Line boxes in the same inline formatting context generally vary in height (e.g., one line might contain a tall image while the others contain only text).
 
-What happens when a inline box is too large for a line box? It depends on whether the inline box is replaced (e.g. a video or a image) or non-replaced (text etc.):
+What happens when an inline box is too large for a line box? It depends on whether the inline box is replaced (e.g. a video or an image) or non-replaced (text etc.):
 
 > When an inline box exceeds the width of a line box, it is split into several boxes and these boxes are distributed across several line boxes. If an inline box cannot be split [...], then the inline box overflows the line box.
 >
@@ -224,7 +224,7 @@ The height of (non-replaced) inline boxes is defined as follows ([source](http:/
 
 > The vertical padding, border and margin of an inline, non-replaced box start at the top and bottom of the content area, and has nothing to do with the 'line-height'. But only the 'line-height' is used when calculating the height of the line box.
 
-As you can see from the parts of the spec shown above, the height of inline boxes is determined by their font and their line height. Specifically, each font must define a baseline, a text-top edge and a text-bottom edge. The calculated height of the content area of a inline box is the height of the font (e.g. bottom - top) multiplied by the line-height value:
+As you can see from the parts of the spec shown above, the height of inline boxes is determined by their font and their line height. Specifically, each font must define a baseline, a text-top edge and a text-bottom edge. The calculated height of the content area of an inline box is the height of the font (e.g. bottom - top) multiplied by the line-height value:
 
 > On a non-replaced inline element, 'line-height' specifies the height that is used in the calculation of the line box height.
 
@@ -352,7 +352,7 @@ The next example illustrates how the inline-block vertical centering technique w
 
 I've added a couple of additional styles to better show the different parts that allow this technique for vertical centering to work. As you can see in the example above:
 
-- the inner blocks inside the container are `display: inline-block`, meaning they are treated as inline-level boxes and produce a inline formatting context, but their contents behave like `display: block` elements (for example, setting `width: 100%` works!).
+- the inner blocks inside the container are `display: inline-block`, meaning they are treated as inline-level boxes and produce an inline formatting context, but their contents behave like `display: block` elements (for example, setting `width: 100%` works!).
 - the container has `text-align: center` to cause the inline-level blocks to be centered on each line box.
 - the content block has `vertical-align: middle` set on it, which aligns it vertically relative to all the other content on the line box.
 - a pseudo-element with `height: 100%` is added to the end of the container. It is shown in green. This is necessary because without it, the content block would simply be positioned at the top of the flow, because it would exist on its own on a single line box, and the line box height would simply match the content block, which would mean that there would be nothing to align it with.
@@ -408,7 +408,7 @@ Putting these pieces together took a while. First, `x-height` is not the same th
 
 >The x-height of a font can be found in different ways. Some fonts contain reliable metrics for the x-height. If reliable font metrics are not available, UAs may determine the x-height from the height of a lowercase glyph. One possible heuristic is to look at how far the glyph for the lowercase "o" extends below the baseline, and subtract that value from the top of its bounding box. In the cases where it is impossible or impractical to determine the x-height, a value of 0.5em should be used.
 
-So, an x-height is literally the height of a x character in the font rather than half the height of the parent element.
+So, an x-height is literally the height of an x character in the font rather than half the height of the parent element.
 
 Now, when the spec says "parent box", what does that mean? It turns out that they mean the line box, not the container box which establishes the inline formatting context. Let me illustrate:
 
@@ -736,7 +736,7 @@ There are three ways to accomplish this:
 - adding an element with `clear: both` using pseudo-elements at the end of the parent
 - making the parent element establish a new formatting context using a property such as `overflow: hidden` or `overflow: auto`
 
-The example in the section on clearing floats illustrated the first approach: explicitly adding a element which clears floats will prevent the floats from interacting with subsequent elements. However, explicitly adding an element into markup to achieve a particular layout is bad - it breaks the contract that the markup should not be concerned with layout.
+The example in the section on clearing floats illustrated the first approach: explicitly adding an element which clears floats will prevent the floats from interacting with subsequent elements. However, explicitly adding an element into markup to achieve a particular layout is bad - it breaks the contract that the markup should not be concerned with layout.
 
 Instead of explicitly adding an element, we can use the `:after` pseudo element to insert additional content at the end of the `.clearfix`ed div. Here's what a basic clearfix following that pattern would look like:
 
@@ -837,7 +837,7 @@ In this example, the floated blocks are also offset from the top so that they ov
 
 The first row uses the `overflow: auto` fix to cause the parent element establish a new formatting context. However, as a side effect, it also alters how `overflow` works, causing overflowing content to be scrollable rather than visible.
 
-The second row uses the pseudo-element approach, which adds an pseudo element with `clear: both` at the end of the row. This keeps the default `overflow: visible` value, which means that the overflowed floats are still visible.
+The second row uses the pseudo-element approach, which adds a pseudo element with `clear: both` at the end of the row. This keeps the default `overflow: visible` value, which means that the overflowed floats are still visible.
 
 ## Absolute / fixed positioning scheme
 

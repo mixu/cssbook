@@ -8,7 +8,7 @@ Now that we have discussed how the box model properties vary across different el
 
 - *Margin collapsing* affects adjacent margins so that only the larger of two margins is applied.
 - *Negative margins*. Negative values (e.g. `-10px`) are allowed for margins, and these can be used to position content.
-- *Overflow*. When the content inside a container box is larger than its parent or positioned at a offset that is beyond the parent's box, it overflows. The `overflow` property controls how this is handled.
+- *Overflow*. When the content inside a container box is larger than its parent or positioned at an offset that is beyond the parent's box, it overflows. The `overflow` property controls how this is handled.
 - *max-width, max-height, min-width, min-height*, Width and height can be further constrained by using the `max-width`, `max-height`, `min-width` and `min-height` properties.
 - *Pseudo-elements* allow additional elements to be generated within the selected element from CSS. They are often used to generate additional content for layout or for to provide a particular visual appearance.
 - *Stacking contexts and rendering order* determine the z-axis rendering of boxes.
@@ -172,7 +172,7 @@ Overflow occurs when a child element is either positioned outside its parent ele
 
 | Property | Default value | Purpose
 |-----------|------------------------------------------------------------------
-| overflow  | visible | Controls how child elements that are larger than their parent elements are handled. Not applicable to `display: inline` elements. Applying a `overflow` value other than `visible` creates a *block formatting context*.
+| overflow  | visible | Controls how child elements that are larger than their parent elements are handled. Not applicable to `display: inline` elements. Applying an `overflow` value other than `visible` creates a *block formatting context*.
 
 The `overflow` property can take the following values. The default value is `visible`:
 
