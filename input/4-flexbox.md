@@ -269,12 +269,24 @@ The hypothetical main size is determined simply by applying any `min-width`, `mi
 
 > The hypothetical main size is the item’s flex base size clamped according to its min and max main size properties.
 
-While the details of that section are intricate, there is an easy way to determine the actual sizes in practice: set `flex-grow` and `flex-shrink` to `0` to disable the resizing behavior. This allows you to directly see what the computed main axis dimensions are for each child element. Since line wrapping occurs before any growth or shrinkage, the line wrapping breakpoints will be the same after you enable growth or shrinkage.
+While the details of that section are intricate, there is an easy way to determine the actual sizes in practice: set `flex-grow` and `flex-shrink` to `0` to disable the resizing behavior and setting the width / height to `0`. This allows you to directly see what the computed main axis dimensions are for each child element. Since line wrapping occurs before any growth or shrinkage, the line wrapping breakpoints will be the same after you enable growth or shrinkage.
+
+Note that the spec changed since I initially wrote this chapter! In the [earlier version](https://www.w3.org/TR/2014/WD-css-flexbox-1-20140325/#intrinsic-sizes) of the spec, the instrinsic sizing rules were:
+
+> The main-size min-content/max-content contribution of a flex item is its outer hypothetical main size when sized under a min-content/max-content constraint (respectively)
+
+but changes at the end of 2015 [altered](https://lists.w3.org/Archives/Public/www-style/2015Aug/0212.html) this to:
+
+> The main-size min-content/max-content contribution of a flex item is its outer min-content/max-content size, clamped by its flex base size as a maximum (if it is not growable) and/or as a minimum (if it is not shrinkable), and then further clamped by its min/max main size properties.
+
+which actually broke my examples (!). Now, instead of the hypothetical outer main size, the value for flex items with `flex-grow: 0`/`flex-shrink: 0` is `min(max(content-size, flex-basis), max-width/max-height)` / `max(min(content-size, flex-basis), min-content-size)`.
 
 The following examples illustrate the four different modes of operation, from left to right:
 
-- `flex-basis: 0` with `width: 45px` on each flex item results in the items having a `0px` width.
-- `flex-basis: 10px` with `width: 45px` on each flex item results in the items having a `10px` width.
+- `flex-basis: 0` with `width: 45px` on each flex item results in the items having at least a `0px` width, or their content size if it is greater.
+- `flex-basis: 10px` with `width: 45px` on each flex item results in the items having at least a `10px` width, or their content size if it is greater.
+- `flex-basis: 35px` with `width: 45px` on each flex item results in the items having at least a `35px` width, or their content size if it is greater.
+- `flex-basis: 35px` with `width: 45px` and `min-width: 10px` on each flex item results in the items having a `10px` width.
 - `flex-basis: auto` with `width: 45px` on each flex item results in the items having a `45px` width, and the items wrap because the sum of flex basis sizes exceeds the flex container's width.
 - `flex-basis: content` with `width: 45px` on each flex item should result in the flex items being sized exactly to their content, but this value is not supported as of the time I'm writing this.
 
@@ -313,6 +325,43 @@ The following examples illustrate the four different modes of operation, from le
 .flex-parent div {
   width: 45px;
   flex-basis: 10px;
+}
+---
+<div class="flex-parent blue">
+  <div class="green">aaa</div><div class="orange">bbbb</div><div class="red">ccc</div>
+</div>
+---
+.flex-parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 0;
+  justify-content: flex-start;
+  width: 150px;
+  height: 100px;
+}
+.flex-parent div {
+  width: 45px;
+  flex-basis: 35px;
+}
+---
+<div class="flex-parent blue">
+  <div class="green">aaa</div><div class="orange">bbbb</div><div class="red">ccc</div>
+</div>
+---
+.flex-parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 0;
+  justify-content: flex-start;
+  width: 150px;
+  height: 100px;
+}
+.flex-parent div {
+  width: 45px;
+  flex-basis: 35px;
+  max-width: 10px;
 }
 ---
 <div class="flex-parent blue">
