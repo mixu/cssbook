@@ -9,7 +9,7 @@ At the core, CSS layout is about mapping a set of HTML elements to a set of rect
 
 The x- and y-axis positioning of these boxes is determined by the positioning scheme that is applied to the boxes. In this chapter, I will cover the positioning schemes introduced in CSS 2.1: normal flow, floats and absolute positioning.
 
-Conceptually, the highest level abstraction for CSS layout is the positioning scheme. Once a positioning scheme has been determined, it can be further modified by specific layout modes, such as `display: table` or `display: inline-table`. Even the CSS 3 extensions - which introduce layout modes such flexbox and grid -  still exist within one of the main positioning schemes (e.g. `display: flex` vs. `display: inline-flex`).
+Conceptually, the highest level abstraction for CSS layout is the positioning scheme. Once a positioning scheme has been determined, it can be further modified by specific layout modes, such as `display: table` or `display: inline-table`. Even the CSS 3 extensions - which introduced layout modes such as flexbox and grid -  still exist within one of the main positioning schemes (e.g. `display: flex` vs. `display: inline-flex`).
 
 ## Positioning schemes
 
@@ -565,7 +565,7 @@ Floats that would not fit horizontally are shifted downward:
 
 > If there is not enough horizontal room for the float, it is shifted downward until either it fits or there are no more floats present.
 
-Floats are ignored for the purpose of vertically positioning block boxes in the same flow. However, floats can affect the line boxes contained withing block boxes in normal flow:
+Floats are ignored for the purpose of vertically positioning block boxes in the same flow. However, floats can affect the line boxes contained within block boxes in normal flow:
 
 > Since a float is not in the flow, non-positioned block boxes created before and after the float box flow vertically as if the float did not exist. However, the current and subsequent line boxes created next to the float are shortened as necessary to make room for the margin box of the float.
 
