@@ -73,7 +73,7 @@ For example, let's say you want to position a box in on the left or right side o
 </div>
 ---
 .parent {
-  position: absolute;
+  position: relative;
   width: 80%;
   height: 80%;
   margin: 0 40px;
